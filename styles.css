@@ -64,10 +64,18 @@ body {
   margin-bottom: 20px;
 }
 
-@media (min-width: 768px) {
-  
+@media (min-width: 1000px) {
+
+
 #startbtn {
       display:none ;
   }
 }
 
+@media (max-width: 1000px){
+.btn{
+  height: 300px;
+  width: 300px;
+}
+}
+  

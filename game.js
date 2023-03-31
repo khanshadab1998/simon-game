@@ -1,7 +1,7 @@
 // change text based on screen size
 const screenSize = () => {
     
-    if (window.innerWidth< 768) {
+    if (window.innerWidth< 1000) {
         $("#level-title").text("Tap on start button");
         console.log("small");
     } else {
@@ -97,7 +97,7 @@ function nextSequence(){
 
 
 function playSound(name){
-    var audio = new Audio(name+".mp3");
+    var audio = new Audio("sounds/"+name+".mp3");
     audio.play();
 }
 
