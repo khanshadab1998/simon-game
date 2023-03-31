@@ -97,7 +97,7 @@ function nextSequence(){
 
 
 function playSound(name){
-    var audio = new Audio("sounds/"+name+".mp3");
+    var audio = new Audio("https://github.com/khanshadab1998/simon-game/blob/main/"+name+".mp3");
     audio.play();
 }
 
