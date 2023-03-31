@@ -69,7 +69,7 @@ function checkAnswer(currentLevel){
         $("body").addClass("game-over");
         setTimeout(function(){
             $("body").removeClass("game-over")},200);
-            if(innerWidth<768){
+            if(innerWidth<1000){
                 $("#level-title").text("Game Over,\n Refresh to Restart");
             }
             else{
