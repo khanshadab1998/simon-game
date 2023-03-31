@@ -64,7 +64,7 @@ function checkAnswer(currentLevel){
 }
     else{
         console.log("wrong");
-        var audio = new Audio("sounds/wrong.mp3");
+        var audio = new Audio("https://github.com/khanshadab1998/simon-game/blob/main/wrong.mp3?raw=true");
         audio.play();
         $("body").addClass("game-over");
         setTimeout(function(){
