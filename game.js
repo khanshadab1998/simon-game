@@ -1,3 +1,18 @@
+// change text based on screen size
+const screenSize = () => {
+    
+    if (window.innerWidth< 768) {
+        $("#level-title").text("Tap on start button");
+        console.log("small");
+    } else {
+        $("#level-title").text("Press any Key to Start");
+        console.log("big");
+    }
+};
+screenSize();
+window.addEventListener('resize',screenSize);
+
+
 let gamePattern = [];
 let buttonColours = ["red", "blue", "green", "yellow"];
 let userClickedPattern = [];
@@ -6,7 +21,7 @@ var started = false;
 var level = 0;
 
 
-$(document).keydown(function(){
+$(document).on("keydown",function (){
     if(!started){
         $("#level-title").text("Level "+level);
         nextSequence();
@@ -14,7 +29,20 @@ $(document).keydown(function(){
     }
 });
 
-$(".btn").click(function(){
+$("#startbtn").on("click", function (){
+    if(!started){
+        $("#level-title").text("Level "+level);
+        nextSequence();
+        started = true;
+        this.style.display="none";
+    }
+}); 
+
+
+
+
+
+$(".btn").on("click",function(){
     var userChosenColour = $(this).attr("id"); 
     userClickedPattern.push(userChosenColour);
     
@@ -41,8 +69,15 @@ function checkAnswer(currentLevel){
         $("body").addClass("game-over");
         setTimeout(function(){
             $("body").removeClass("game-over")},200);
-        $("#level-title").text("Game Over,\n Press Any Key to Restart");
+            if(innerWidth<768){
+                $("#level-title").text("Game Over,\n Refresh to Restart");
+            }
+            else{
+                $("#level-title").text("Game Over,\n Press Any Key to Restart");
+            }
         startOver();
+        $("#startbtn").text="RESTART";
+        $("#startbtn").style.display="block";
     }
 }
 
@@ -78,3 +113,14 @@ function startOver(){
     gamePattern=[];
     started=false;
 }
+
+
+
+
+
+
+
+
+
+
+
